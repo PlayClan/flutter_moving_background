@@ -48,7 +48,10 @@ class _MovingCircleState extends State<MovingCircle>
 
   @override
   void dispose() {
+    _controller.stop();
     _controller.dispose();
+    _fadeController.stop();
+    _fadeController.dispose();
     super.dispose();
   }
 
@@ -85,12 +88,14 @@ class _MovingCircleState extends State<MovingCircle>
   }
 
   void calculate() {
-    setState(() {
-      screenWidth = MediaQuery.of(context).size.width;
-      screenHeight = MediaQuery.of(context).size.height;
-      randomX = random.nextDouble() * screenWidth;
-      randomY = random.nextDouble() * screenHeight;
-    });
+    if (mounted) {
+      setState(() {
+        screenWidth = MediaQuery.of(context).size.width;
+        screenHeight = MediaQuery.of(context).size.height;
+        randomX = random.nextDouble() * screenWidth;
+        randomY = random.nextDouble() * screenHeight;
+      });
+    }
   }
 
   @override
