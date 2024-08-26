@@ -36,14 +36,15 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: MovingBackground(
-          duration: const Duration(seconds: 2),
-          animationType: AnimationType.moveAndFade,
+          duration: const Duration(seconds: 1),
+          animationType: AnimationType.fades,
           backgroundColor: darkMode ? Colors.black87 : Colors.white,
           circles: const [
-            MovingCircle(color: Colors.purple,),
+            MovingCircle(color: Colors.purple),
             MovingCircle(color: Colors.blueAccent),
             MovingCircle(color: Colors.grey),
             MovingCircle(color: Colors.lightBlue),
+
           ],
           child: Center(
             child: Card(

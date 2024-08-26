@@ -11,7 +11,7 @@ class StateController extends ChangeNotifier {
   static final StateController _instance = StateController._();
 
   void init(MovingBackground data) {
-    if (animationType == AnimationType.moveAndFade) {
+    if (animationType == AnimationType.mixed) {
       duration = duration?? const Duration(seconds: 2);
     }
     child = data.child;
@@ -30,7 +30,7 @@ class StateController extends ChangeNotifier {
   Color? backgroundColor;
 
   Duration? duration;
-  AnimationType animationType = AnimationType.moveAndFade;
+  AnimationType animationType = AnimationType.translation;
 
   /// List of [MovingCircle] widgets that define the circles on the background.
   late List<MovingCircle> circles;

@@ -1,6 +1,6 @@
 enum AnimationType{
 
-
-  moveAndFade,
-
+  translation,
+  mixed,
+  rain, fades,
 }
